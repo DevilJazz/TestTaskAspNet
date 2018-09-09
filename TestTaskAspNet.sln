@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.WebUI", "TestTask.WebUI\TestTask.WebUI.csproj", "{D60C5DF9-387C-46F3-B650-6D7F6CFC6229}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.Domain", "TestTask.Domain\TestTask.Domain.csproj", "{4E3F7872-FCB3-4225-A197-72894CFCBF52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D60C5DF9-387C-46F3-B650-6D7F6CFC6229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D60C5DF9-387C-46F3-B650-6D7F6CFC6229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D60C5DF9-387C-46F3-B650-6D7F6CFC6229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D60C5DF9-387C-46F3-B650-6D7F6CFC6229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E3F7872-FCB3-4225-A197-72894CFCBF52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E3F7872-FCB3-4225-A197-72894CFCBF52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E3F7872-FCB3-4225-A197-72894CFCBF52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E3F7872-FCB3-4225-A197-72894CFCBF52}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {980EC620-B92C-418A-95FD-DCA3EA247097}
+	EndGlobalSection
+EndGlobal

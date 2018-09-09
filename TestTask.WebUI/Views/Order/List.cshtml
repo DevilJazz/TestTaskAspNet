@@ -1,0 +1,89 @@
+﻿@model TestTask.WebUI.Models.OrdersListViewModel
+
+@{
+    ViewBag.Title = "Orders";
+}
+
+<div id="modDialog" class="modal fade">
+    <div id="dialogContent" class="modal-dialog"></div>
+</div>
+
+@using (Html.BeginForm())
+{
+    <p style="margin-top: 10pt">
+        <b class="text-info"> Manager filter: @Html.TextBox("manager")</b>
+        <input class="btn" type="submit" value="Search" />
+    </p>
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Number</th>
+            <th scope="col">Creation date</th>
+            <th scope="col">Shipping date</th>
+            <th scope="col">Manager</th>
+            <th scope="col">Note</th>
+            <th scope="col">Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var p in Model.Orders)
+        {
+            <tr>
+                <td>@p.Number</td>
+                <td>@p.CreationDate.ToString("MM/dd/yyyy")</td>
+
+                @if (p.ShippingDate != null)
+                {
+                    <td>@p.ShippingDate.Value.ToString("MM/dd/yyyy")</td>
+                }
+                else
+                {
+                    <td></td>
+                }
+
+                <td>@p.Manager</td>
+
+                @if (p.Note != null)
+                {
+                    <td>@p.Note</td>
+                }
+                else
+                {
+                    <td></td>
+                }
+                <td>@Html.ActionLink("Edit", "Edit", new { p.OrderId }, new { @class = "modalItem" })</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="btn-block pull-left">
+
+    @Html.ActionLink("Create new", "Create",  new { @class = "modalItem" })
+</div>
+
+<div class="btn-group pull-right">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+
+        $(function () {
+            $.ajaxSetup({ cache: false });
+            $(".modalItem").click(function (e) {
+
+                e.preventDefault();
+                $.get(this.href, function (data) {
+                    $('#dialogContent').html(data);
+                    $('#modDialog').modal('show');
+                });
+            });
+        })
+    </script>
+}
